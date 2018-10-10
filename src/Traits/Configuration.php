@@ -16,7 +16,12 @@ trait Configuration
 
     public function __inject()
     {
-        $this->config = Config::get('injection.' . __CLASS__, []);
+        $config = Config::get('injection.' . __CLASS__, []);
+        foreach ($config as $key => $value) {
+            '&' === $value{0} && $value = Config::get($value);
+            $this->config[$key] = $value;
+        }
+
         $this->__injected = true;
     }
 }
