@@ -18,7 +18,7 @@ trait Configuration
     {
         $config = Config::get('injection.' . __CLASS__, []);
         foreach ($config as $key => $value) {
-            '&' === $value{0} && $value = Config::get($value);
+            $value && '&' === $value{0} && $value = Config::get(substr($value, 1));
             $this->config[$key] = $value;
         }
 
