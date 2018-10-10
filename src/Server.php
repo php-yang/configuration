@@ -2,31 +2,18 @@
 
 namespace Yang\Configuration;
 
-use Dotenv\Dotenv;
-use Yang\Configuration\Providers\Environment as Provider;
+use Yang\Configuration\Providers\Server as Provider;
 
 /**
- * Class Environment
+ * Class Server
  * @package Yang\Configuration
  */
-final class Environment
+class Server
 {
     /**
      * @var Provider
      */
     protected static $provider;
-
-    /**
-     * @param array $scanDirectories
-     */
-    public static function init(array $scanDirectories)
-    {
-        foreach ($scanDirectories as $directory) {
-            (new Dotenv($directory))->safeLoad();
-        }
-
-        self::$provider = new Provider();
-    }
 
     /**
      * @param string $key

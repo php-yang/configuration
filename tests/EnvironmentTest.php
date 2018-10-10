@@ -18,5 +18,7 @@ class EnvironmentTest extends TestCase
         $this->assertEquals(Environment::get('NAME'), 'neo');
         $this->assertEquals(Environment::get('MALE'), true);
         $this->assertEquals(Environment::get('WELCOME'), Environment::get('NAME') . ', welcome!');
+
+        $this->assertNotEmpty(Environment::all());
     }
 }
