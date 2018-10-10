@@ -15,6 +15,11 @@ class Server
      */
     protected static $provider;
 
+    public static function init()
+    {
+        self::getProvider();
+    }
+
     /**
      * @param string $key
      * @param mixed $default
