@@ -9,15 +9,10 @@ trait Configuration
 {
     use Injection;
 
-    /**
-     * @var array
-     */
-    protected $config = [];
-
     public function __inject()
     {
         do {
-            if (!$this->config) {
+            if (empty($this->config)) {
                 break;
             }
 
