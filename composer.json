@@ -10,7 +10,7 @@
     ],
     "homepage": "http://github.com/php-yang/configuration",
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.5",
         "vlucas/phpdotenv": "~2.5",
         "php-yang/core": "~1.0"
     },
@@ -27,7 +27,7 @@
             "email": "pengzhile@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Yang\\Configuration\\": "src/"
